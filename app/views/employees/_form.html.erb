@@ -1,0 +1,70 @@
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :userid %><br />
+    <%= f.number_field :userid %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, :start_year => 1880 %>
+  </div>
+  <div class="field">
+    <%= f.label :NRCNo %><br />
+    <%= f.text_field :NRCNo %>
+  </div>
+  <div class="field">
+    <%= f.label :Gender %><br />
+    <%= f.radio_button :Gender,'Male' %><%= f.label :gender,'Male' %>
+    <%= f.radio_button :Gender,'Female' %><%= f.label :gender,'Female' %>
+  </div>
+  <div class="field">
+    <%= f.label :specialize %><br />
+    <%= f.text_field :specialize %>
+  </div>
+  <div class="field">
+    <%= f.label :phno %><br />
+    <%= f.number_field :phno %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :travelfee %><br />
+    <%= f.number_field :travelfee %>
+  </div>
+  <div class="field">
+    <%= f.label :entrydate %><br />
+    <%= f.date_select :entrydate, :start_year => 1880 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Listing libraries</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Tag</th>
+    <th>Content</th>
+    <th>Image</th>
+    <th>Reference</th>
+    <th>File</th>
+    <th></th>
+  </tr>
+
+<% @libraries.each do |library| %>
+  <tr>
+    <td><%= library.Title %></td>
+    <td><%= library.Tag %></td>
+    <td><%= library.Content %></td>
+    <td><%= library.Image %></td>
+    <td><%= library.Reference %></td>
+    <td><%= library.File %></td>
+    <td><%= link_to 'Show', library %></td>
+    <td><%= link_to 'Edit', edit_library_path(library) %></td>
+    <td><%= link_to 'Destroy', library, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<!--<%= link_to 'Pdf', libraries_path %>-->
+<%= link_to 'New Library',  new_library_path %>

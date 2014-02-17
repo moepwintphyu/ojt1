@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  empid: 
+  empname: MyString
+  ordernumber: 
+  chatid: 
+
+two:
+  empid: 
+  empname: MyString
+  ordernumber: 
+  chatid: 

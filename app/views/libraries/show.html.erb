@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @library.Title %>
+</p>
+
+<p>
+  <b>Tag:</b>
+  <%= @library.Tag %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @library.Content %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag(@library.Image_url :width => 600) if @library.Image.present? %>
+</p>
+
+<p>
+  <b>Reference:</b>
+  <%= @library.Reference %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%= @library.File%>
+</p>
+
+<br />
+<br />
+<!--<%= link_to '<button type="button">Download</button>'.html_safe, libraries_path%>-->
+<p>FilePath###<br /><%= @library.File%></p>
+
+
+
+<%= link_to "Download it", libraries_pdf_path(@library) %>
+ 
+
+<%= link_to 'Edit', edit_library_path(@library) %> 
+<%= link_to 'Back', libraries_path %>
